@@ -5,11 +5,13 @@
 LoyeGold is a modern e-commerce jewelry website with a clean, minimalistic design and advanced UI.  
 It is built with the following technologies:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Vite** – fast development build tool
+- **TypeScript** – strongly typed JavaScript for better maintainability
+- **React** – component-based UI library
+- **shadcn-ui** – accessible and customizable UI components
+- **Tailwind CSS** – utility-first CSS framework for styling
+
+---
 
 ## Getting Started
 
