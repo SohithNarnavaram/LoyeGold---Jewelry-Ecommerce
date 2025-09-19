@@ -54,10 +54,10 @@ const Footer = () => {
               </li>
               <li>
                 <button 
-                  onClick={() => navigate('/profile')}
+                  onClick={() => navigate('/custom-jewelry')}
                   className="text-muted-foreground hover:text-primary transition-colors text-left"
                 >
-                  Profile
+                  Custom Jewelry
                 </button>
               </li>
               <li>

@@ -1,8 +1,11 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ProductCard from './ProductCard';
+import { Button } from '@/components/ui/button';
 import { getAllProducts, getProductsByCategory } from '@/data/products';
 
 const FeaturedProducts = () => {
+  const navigate = useNavigate();
   const [activeCategory, setActiveCategory] = useState('all');
   const allProducts = getAllProducts();
   const products = getProductsByCategory(activeCategory).slice(0, 8);
@@ -54,10 +57,20 @@ const FeaturedProducts = () => {
           ))}
         </div>
         
-        <div className="text-center mt-12">
-          <button className="btn-luxury px-8 py-3 rounded-lg font-medium transition-all duration-300">
+        <div className="text-center mt-12 space-y-4">
+          <Button 
+            onClick={() => navigate('/')} 
+            className="btn-luxury px-8 py-3 rounded-lg font-medium transition-all duration-300 mr-4"
+          >
             View All Products
-          </button>
+          </Button>
+          <Button 
+            onClick={() => navigate('/custom-jewelry')} 
+            variant="outline"
+            className="px-8 py-3 rounded-lg font-medium transition-all duration-300"
+          >
+            Create Custom Design
+          </Button>
         </div>
       </div>
     </section>

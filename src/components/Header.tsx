@@ -41,10 +41,10 @@ const Header = () => {
               Products
             </button>
             <button 
-              onClick={() => navigate('/profile')}
+              onClick={() => navigate('/custom-jewelry')}
               className="text-sm font-medium transition-colors hover:text-primary"
             >
-              Profile
+              Custom Jewelry
             </button>
             <button 
               onClick={() => navigate('/contact')}
@@ -59,19 +59,12 @@ const Header = () => {
             <Button variant="ghost" size="icon" className="hover:bg-secondary">
               <Search className="h-4 w-4" />
             </Button>
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              className="hover:bg-secondary"
-              onClick={() => navigate('/profile')}
-            >
-              <User className="h-4 w-4" />
-            </Button>
+            
             <Button 
               variant="ghost" 
               size="icon" 
               className="hover:bg-secondary relative"
-              onClick={() => navigate('/profile')}
+              onClick={() => navigate('/custom-jewelry')}
             >
               <Heart className="h-4 w-4" />
               {favoritesState.items.length > 0 && (
@@ -131,12 +124,12 @@ const Header = () => {
               </button>
               <button 
                 onClick={() => {
-                  navigate('/profile');
+                  navigate('/custom-jewelry');
                   setIsMenuOpen(false);
                 }}
                 className="block w-full text-left px-3 py-2 text-sm font-medium hover:bg-secondary rounded-md"
               >
-                Profile
+                Custom Jewelry
               </button>
               <button 
                 onClick={() => {
@@ -153,16 +146,9 @@ const Header = () => {
                 </Button>
                 <Button 
                   variant="ghost" 
-                  size="icon"
-                  onClick={() => navigate('/profile')}
-                >
-                  <User className="h-4 w-4" />
-                </Button>
-                <Button 
-                  variant="ghost" 
                   size="icon" 
                   className="relative"
-                  onClick={() => navigate('/profile')}
+                  onClick={() => navigate('/custom-jewelry')}
                 >
                   <Heart className="h-4 w-4" />
                   {favoritesState.items.length > 0 && (
