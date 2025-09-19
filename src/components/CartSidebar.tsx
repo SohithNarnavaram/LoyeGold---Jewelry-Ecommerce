@@ -57,7 +57,7 @@ const CartSidebar = () => {
                     
                     <div className="flex-1">
                       <h4 className="font-medium text-sm line-clamp-2">{item.name}</h4>
-                      <p className="text-primary font-bold">${item.price}</p>
+                      <p className="text-primary font-bold">₹{item.price.toLocaleString('en-IN')}</p>
                       
                       <div className="flex items-center gap-2 mt-2">
                         <Button
@@ -103,7 +103,7 @@ const CartSidebar = () => {
             <div className="border-t p-4 space-y-4">
               <div className="flex justify-between items-center text-lg font-semibold">
                 <span>Total:</span>
-                <span className="text-primary">${state.totalPrice.toFixed(2)}</span>
+                <span className="text-primary">₹{state.totalPrice.toLocaleString('en-IN')}</span>
               </div>
               
               <div className="space-y-2">

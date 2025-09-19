@@ -199,7 +199,7 @@ const CustomJewelry = () => {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="budget">Budget Range</Label>
-                  <Input id="budget" placeholder="e.g., $2,000 - $5,000" />
+                  <Input id="budget" placeholder="e.g., ₹1,50,000 - ₹4,00,000" />
                 </div>
               </div>
 

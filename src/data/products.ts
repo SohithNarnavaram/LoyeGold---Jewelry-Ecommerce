@@ -20,8 +20,8 @@ export const products: Product[] = [
   {
     id: 1,
     name: "Rose Gold Pendant Necklace",
-    price: 89,
-    originalPrice: 120,
+    price: 7500,
+    originalPrice: 9500,
     rating: 4.8,
     reviewCount: 156,
     imageUrl: product1,
@@ -32,7 +32,7 @@ export const products: Product[] = [
   {
     id: 2,
     name: "Diamond Gold Earrings",
-    price: 149,
+    price: 12500,
     rating: 4.9,
     reviewCount: 203,
     imageUrl: product2,
@@ -43,8 +43,8 @@ export const products: Product[] = [
   {
     id: 3,
     name: "White Gold Gemstone Ring",
-    price: 199,
-    originalPrice: 250,
+    price: 15500,
+    originalPrice: 19500,
     rating: 4.7,
     reviewCount: 89,
     imageUrl: product3,
@@ -55,7 +55,7 @@ export const products: Product[] = [
   {
     id: 4,
     name: "Charm Bracelet Collection",
-    price: 79,
+    price: 6500,
     rating: 4.6,
     reviewCount: 124,
     imageUrl: product4,
@@ -66,8 +66,8 @@ export const products: Product[] = [
   {
     id: 5,
     name: "Platinum Tennis Bracelet",
-    price: 299,
-    originalPrice: 399,
+    price: 25500,
+    originalPrice: 32500,
     rating: 4.9,
     reviewCount: 78,
     imageUrl: product1,
@@ -78,7 +78,7 @@ export const products: Product[] = [
   {
     id: 6,
     name: "Emerald Drop Earrings",
-    price: 189,
+    price: 18500,
     rating: 4.8,
     reviewCount: 142,
     imageUrl: product2,
@@ -89,8 +89,8 @@ export const products: Product[] = [
   {
     id: 7,
     name: "Gold Infinity Ring",
-    price: 129,
-    originalPrice: 160,
+    price: 11500,
+    originalPrice: 14500,
     rating: 4.7,
     reviewCount: 167,
     imageUrl: product3,
@@ -101,7 +101,7 @@ export const products: Product[] = [
   {
     id: 8,
     name: "Pearl Chain Necklace",
-    price: 159,
+    price: 13500,
     rating: 4.8,
     reviewCount: 93,
     imageUrl: product4,
@@ -112,8 +112,8 @@ export const products: Product[] = [
   {
     id: 9,
     name: "Ruby Stud Earrings",
-    price: 219,
-    originalPrice: 280,
+    price: 22500,
+    originalPrice: 28500,
     rating: 4.9,
     reviewCount: 234,
     imageUrl: product1,
@@ -124,7 +124,7 @@ export const products: Product[] = [
   {
     id: 10,
     name: "Sapphire Engagement Ring",
-    price: 499,
+    price: 45500,
     rating: 5.0,
     reviewCount: 67,
     imageUrl: product2,
@@ -135,8 +135,8 @@ export const products: Product[] = [
   {
     id: 11,
     name: "Gold Link Bracelet",
-    price: 109,
-    originalPrice: 140,
+    price: 9500,
+    originalPrice: 12500,
     rating: 4.6,
     reviewCount: 156,
     imageUrl: product3,
@@ -147,7 +147,7 @@ export const products: Product[] = [
   {
     id: 12,
     name: "Diamond Cross Pendant",
-    price: 249,
+    price: 21500,
     rating: 4.8,
     reviewCount: 89,
     imageUrl: product4,

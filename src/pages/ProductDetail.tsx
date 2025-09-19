@@ -156,11 +156,11 @@ const ProductDetail = () => {
 
               <div className="flex items-center gap-4 mb-6">
                 <span className="text-3xl font-bold text-primary">
-                  ${product.price}
+                  ₹{product.price.toLocaleString('en-IN')}
                 </span>
                 {product.originalPrice && (
                   <span className="text-xl text-muted-foreground line-through">
-                    ${product.originalPrice}
+                    ₹{product.originalPrice.toLocaleString('en-IN')}
                   </span>
                 )}
               </div>
@@ -193,7 +193,7 @@ const ProductDetail = () => {
                 onClick={handleAddToCart}
               >
                 <ShoppingBag className="h-5 w-5 mr-2" />
-                Add to Cart - ${(product.price * quantity).toFixed(2)}
+                Add to Cart - ₹{(product.price * quantity).toLocaleString('en-IN')}
               </Button>
             </div>
 

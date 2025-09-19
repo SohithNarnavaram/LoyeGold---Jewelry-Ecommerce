@@ -45,8 +45,8 @@ const ContactUs = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold mb-1">Phone</h3>
-                  <p className="text-muted-foreground">+1 (555) 123-4567</p>
-                  <p className="text-sm text-muted-foreground">Mon-Fri 9AM-6PM EST</p>
+                  <p className="text-muted-foreground">+91 98765 43210</p>
+                  <p className="text-sm text-muted-foreground">Mon-Fri 10AM-7PM IST</p>
                 </div>
               </div>
 
@@ -56,7 +56,7 @@ const ContactUs = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold mb-1">Email</h3>
-                  <p className="text-muted-foreground">hello@loyegold.com</p>
+                  <p className="text-muted-foreground">hello@loyegold.in</p>
                   <p className="text-sm text-muted-foreground">We'll respond within 24 hours</p>
                 </div>
               </div>
@@ -68,8 +68,8 @@ const ContactUs = () => {
                 <div>
                   <h3 className="font-semibold mb-1">Address</h3>
                   <p className="text-muted-foreground">
-                    123 Jewelry Lane<br />
-                    Gold District, NY 10001
+                    123 Jewelers Street<br />
+                    Karol Bagh, New Delhi 110005
                   </p>
                 </div>
               </div>
@@ -81,9 +81,9 @@ const ContactUs = () => {
                 <div>
                   <h3 className="font-semibold mb-1">Store Hours</h3>
                   <div className="text-muted-foreground text-sm space-y-1">
-                    <p>Monday - Friday: 9:00 AM - 7:00 PM</p>
-                    <p>Saturday: 10:00 AM - 6:00 PM</p>
-                    <p>Sunday: 12:00 PM - 5:00 PM</p>
+                    <p>Monday - Friday: 10:00 AM - 8:00 PM</p>
+                    <p>Saturday: 10:00 AM - 7:00 PM</p>
+                    <p>Sunday: 11:00 AM - 6:00 PM</p>
                   </div>
                 </div>
               </div>
@@ -164,7 +164,7 @@ const ContactUs = () => {
               <div>
                 <h3 className="font-semibold mb-2">How long does shipping take?</h3>
                 <p className="text-muted-foreground text-sm">
-                  Standard shipping takes 3-5 business days. Express shipping is available.
+                  Standard shipping takes 3-7 business days across India. Express shipping available for metro cities.
                 </p>
               </div>
             </div>
