@@ -4,29 +4,44 @@ import { useNavigate } from 'react-router-dom';
 const Footer = () => {
   const navigate = useNavigate();
   return (
-    <footer className="border-t" style={{ backgroundColor: '#faf4f6' }}>
+    <footer className="border-t" style={{ backgroundColor: '#F39F9F' }}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="space-y-4">
             <h3 
-              className="text-2xl font-serif font-bold gradient-rose bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent cursor-pointer"
+              className="text-2xl font-serif font-bold text-white cursor-pointer"
               onClick={() => navigate('/')}
             >
               Loyegold
             </h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">
+            <p className="text-white/90 text-sm leading-relaxed">
               Crafting beautiful jewelry pieces that celebrate life's precious moments. 
               Quality, elegance, and style in every design.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a 
+                href="https://www.facebook.com/loyegold" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white hover:text-white/80 transition-colors"
+              >
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a 
+                href="https://www.instagram.com/loyegold" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white hover:text-white/80 transition-colors"
+              >
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a 
+                href="https://www.twitter.com/loyegold" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white hover:text-white/80 transition-colors"
+              >
                 <Twitter className="h-5 w-5" />
               </a>
             </div>
@@ -34,12 +49,12 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
+            <h4 className="font-semibold mb-4 text-white">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <button 
                   onClick={() => navigate('/')}
-                  className="text-muted-foreground hover:text-primary transition-colors text-left"
+                  className="text-white/90 hover:text-white transition-colors text-left"
                 >
                   Home
                 </button>
@@ -47,7 +62,7 @@ const Footer = () => {
               <li>
                 <button 
                   onClick={() => navigate('/')}
-                  className="text-muted-foreground hover:text-primary transition-colors text-left"
+                  className="text-white/90 hover:text-white transition-colors text-left"
                 >
                   Products
                 </button>
@@ -55,7 +70,7 @@ const Footer = () => {
               <li>
                 <button 
                   onClick={() => navigate('/custom-jewelry')}
-                  className="text-muted-foreground hover:text-primary transition-colors text-left"
+                  className="text-white/90 hover:text-white transition-colors text-left"
                 >
                   Custom Jewelry
                 </button>
@@ -63,7 +78,7 @@ const Footer = () => {
               <li>
                 <button 
                   onClick={() => navigate('/contact')}
-                  className="text-muted-foreground hover:text-primary transition-colors text-left"
+                  className="text-white/90 hover:text-white transition-colors text-left"
                 >
                   Contact Us
                 </button>
@@ -73,36 +88,36 @@ const Footer = () => {
 
           {/* Customer Service */}
           <div>
-            <h4 className="font-semibold mb-4">Customer Service</h4>
+            <h4 className="font-semibold mb-4 text-white">Customer Service</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <button 
                   onClick={() => navigate('/contact')}
-                  className="text-muted-foreground hover:text-primary transition-colors text-left"
+                  className="text-white/90 hover:text-white transition-colors text-left"
                 >
                   Contact Us
                 </button>
               </li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Shipping Info</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Returns & Exchanges</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Warranty</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">FAQ</a></li>
+              <li><a href="#" className="text-white/90 hover:text-white transition-colors">Shipping Info</a></li>
+              <li><a href="#" className="text-white/90 hover:text-white transition-colors">Returns & Exchanges</a></li>
+              <li><a href="#" className="text-white/90 hover:text-white transition-colors">Warranty</a></li>
+              <li><a href="#" className="text-white/90 hover:text-white transition-colors">FAQ</a></li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-semibold mb-4">Get in Touch</h4>
+            <h4 className="font-semibold mb-4 text-white">Get in Touch</h4>
             <div className="space-y-3 text-sm">
-              <div className="flex items-center space-x-2 text-muted-foreground">
+              <div className="flex items-center space-x-2 text-white/90">
                 <Phone className="h-4 w-4" />
                 <span>+91 98765 43210</span>
               </div>
-              <div className="flex items-center space-x-2 text-muted-foreground">
+              <div className="flex items-center space-x-2 text-white/90">
                 <Mail className="h-4 w-4" />
                 <span>hello@loyegold.in</span>
               </div>
-              <div className="flex items-center space-x-2 text-muted-foreground">
+              <div className="flex items-center space-x-2 text-white/90">
                 <MapPin className="h-4 w-4" />
                 <span>Karol Bagh, New Delhi 110005</span>
               </div>
@@ -111,11 +126,11 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground">
+        <div className="border-t border-white/20 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-white/90">
           <p>© 2024 Loyegold. All rights reserved.</p>
           <div className="flex space-x-4 mt-4 sm:mt-0">
-            <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>
