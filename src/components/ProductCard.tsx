@@ -105,17 +105,18 @@ const ProductCard = ({
         </Button>
         
         {/* Quick Add Button */}
-        <div className={`absolute bottom-3 left-3 right-3 transition-opacity duration-300 ${
+        <div className={`absolute bottom-3 left-1/2 transform -translate-x-1/2 transition-opacity duration-300 ${
           isHovered ? 'opacity-100' : 'opacity-0'
         }`}>
           <Button 
-            className="w-full btn-luxury" 
+            className="btn-luxury px-4 py-2 rounded-full text-sm font-medium shadow-lg" 
+            size="sm"
             onClick={(e) => {
               e.stopPropagation();
               handleAddToCart();
             }}
           >
-            <ShoppingBag className="h-4 w-4 mr-2" />
+            <ShoppingBag className="h-3 w-3 mr-1" />
             Quick Add
           </Button>
         </div>
