@@ -1,8 +1,9 @@
-# Project
+# LoyeGold - E-commerce Jewelry Site
 
 ## Project Info
 
-This is a web application built with the following technologies:
+LoyeGold is a modern e-commerce jewelry website with a clean, minimalistic design and advanced UI.  
+It is built with the following technologies:
 
 - Vite
 - TypeScript
