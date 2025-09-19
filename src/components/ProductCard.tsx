@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Heart, Star, ShoppingBag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/contexts/CartContext';
+import { useFavorites } from '@/contexts/FavoritesContext';
+import { useNavigate } from 'react-router-dom';
 
 interface ProductCardProps {
   id: number;
@@ -26,9 +28,10 @@ const ProductCard = ({
   isNew, 
   isSale 
 }: ProductCardProps) => {
-  const [isWishlisted, setIsWishlisted] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const { addItem } = useCart();
+  const { addToFavorites, removeFromFavorites, isFavorite } = useFavorites();
+  const navigate = useNavigate();
 
   const handleAddToCart = () => {
     addItem({
@@ -39,6 +42,23 @@ const ProductCard = ({
     });
   };
 
+  const handleToggleFavorite = () => {
+    if (isFavorite(id)) {
+      removeFromFavorites(id);
+    } else {
+      addToFavorites({
+        id,
+        name,
+        price,
+        imageUrl,
+      });
+    }
+  };
+
+  const handleProductClick = () => {
+    navigate(`/product/${id}`);
+  };
+
   return (
     <div 
       className="group card-luxury bg-card overflow-hidden"
@@ -46,7 +66,7 @@ const ProductCard = ({
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Product Image */}
-      <div className="relative aspect-square overflow-hidden">
+      <div className="relative aspect-square overflow-hidden cursor-pointer" onClick={handleProductClick}>
         <img
           src={imageUrl}
           alt={name}
@@ -72,11 +92,14 @@ const ProductCard = ({
           variant="ghost"
           size="icon"
           className="absolute top-3 right-3 bg-white/80 backdrop-blur hover:bg-white transition-all duration-300"
-          onClick={() => setIsWishlisted(!isWishlisted)}
+          onClick={(e) => {
+            e.stopPropagation();
+            handleToggleFavorite();
+          }}
         >
           <Heart 
             className={`h-4 w-4 transition-colors ${
-              isWishlisted ? 'fill-primary text-primary' : 'text-muted-foreground'
+              isFavorite(id) ? 'fill-primary text-primary' : 'text-muted-foreground'
             }`} 
           />
         </Button>
@@ -85,7 +108,13 @@ const ProductCard = ({
         <div className={`absolute bottom-3 left-3 right-3 transition-opacity duration-300 ${
           isHovered ? 'opacity-100' : 'opacity-0'
         }`}>
-          <Button className="w-full btn-luxury" onClick={handleAddToCart}>
+          <Button 
+            className="w-full btn-luxury" 
+            onClick={(e) => {
+              e.stopPropagation();
+              handleAddToCart();
+            }}
+          >
             <ShoppingBag className="h-4 w-4 mr-2" />
             Quick Add
           </Button>
@@ -95,7 +124,10 @@ const ProductCard = ({
       {/* Product Info */}
       <div className="p-4 space-y-3">
         <div className="space-y-1">
-          <h3 className="font-medium text-foreground line-clamp-2 hover:text-primary transition-colors cursor-pointer">
+          <h3 
+            className="font-medium text-foreground line-clamp-2 hover:text-primary transition-colors cursor-pointer"
+            onClick={handleProductClick}
+          >
             {name}
           </h3>
           

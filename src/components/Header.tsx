@@ -2,10 +2,14 @@ import { useState } from 'react';
 import { Search, Heart, ShoppingBag, Menu, X, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/contexts/CartContext';
+import { useFavorites } from '@/contexts/FavoritesContext';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { state, toggleCart } = useCart();
+  const { state: favoritesState } = useFavorites();
+  const navigate = useNavigate();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -13,7 +17,10 @@ const Header = () => {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <h1 className="text-2xl font-serif font-bold gradient-rose bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <h1 
+              className="text-2xl font-serif font-bold gradient-rose bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent cursor-pointer"
+              onClick={() => navigate('/')}
+            >
               Loyegold
             </h1>
           </div>
@@ -39,14 +46,26 @@ const Header = () => {
             <Button variant="ghost" size="icon" className="hover:bg-secondary">
               <Search className="h-4 w-4" />
             </Button>
-            <Button variant="ghost" size="icon" className="hover:bg-secondary">
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="hover:bg-secondary"
+              onClick={() => navigate('/profile')}
+            >
               <User className="h-4 w-4" />
             </Button>
-            <Button variant="ghost" size="icon" className="hover:bg-secondary relative">
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="hover:bg-secondary relative"
+              onClick={() => navigate('/profile')}
+            >
               <Heart className="h-4 w-4" />
-              <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-primary text-xs text-primary-foreground flex items-center justify-center">
-                2
-              </span>
+              {favoritesState.items.length > 0 && (
+                <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-primary text-xs text-primary-foreground flex items-center justify-center">
+                  {favoritesState.items.length}
+                </span>
+              )}
             </Button>
             <Button 
               variant="ghost" 
@@ -95,14 +114,25 @@ const Header = () => {
                 <Button variant="ghost" size="icon">
                   <Search className="h-4 w-4" />
                 </Button>
-                <Button variant="ghost" size="icon">
+                <Button 
+                  variant="ghost" 
+                  size="icon"
+                  onClick={() => navigate('/profile')}
+                >
                   <User className="h-4 w-4" />
                 </Button>
-                <Button variant="ghost" size="icon" className="relative">
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  className="relative"
+                  onClick={() => navigate('/profile')}
+                >
                   <Heart className="h-4 w-4" />
-                  <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-primary text-xs text-primary-foreground flex items-center justify-center">
-                    2
-                  </span>
+                  {favoritesState.items.length > 0 && (
+                    <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-primary text-xs text-primary-foreground flex items-center justify-center">
+                      {favoritesState.items.length}
+                    </span>
+                  )}
                 </Button>
                 <Button 
                   variant="ghost" 

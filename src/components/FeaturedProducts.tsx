@@ -1,53 +1,18 @@
+import { useState } from 'react';
 import ProductCard from './ProductCard';
-import product1 from '@/assets/product-1.jpg';
-import product2 from '@/assets/product-2.jpg';
-import product3 from '@/assets/product-3.jpg';
-import product4 from '@/assets/product-4.jpg';
+import { getAllProducts, getProductsByCategory } from '@/data/products';
 
 const FeaturedProducts = () => {
-  const products = [
-    {
-      id: 1,
-      name: "Rose Gold Pendant Necklace",
-      price: 89,
-      originalPrice: 120,
-      rating: 4.8,
-      reviewCount: 156,
-      imageUrl: product1,
-      isNew: true,
-      isSale: true
-    },
-    {
-      id: 2,
-      name: "Diamond Gold Earrings",
-      price: 149,
-      rating: 4.9,
-      reviewCount: 203,
-      imageUrl: product2,
-      isNew: false,
-      isSale: false
-    },
-    {
-      id: 3,
-      name: "White Gold Gemstone Ring",
-      price: 199,
-      originalPrice: 250,
-      rating: 4.7,
-      reviewCount: 89,
-      imageUrl: product3,
-      isNew: false,
-      isSale: true
-    },
-    {
-      id: 4,
-      name: "Charm Bracelet Collection",
-      price: 79,
-      rating: 4.6,
-      reviewCount: 124,
-      imageUrl: product4,
-      isNew: true,
-      isSale: false
-    }
+  const [activeCategory, setActiveCategory] = useState('all');
+  const allProducts = getAllProducts();
+  const products = getProductsByCategory(activeCategory).slice(0, 8);
+
+  const categories = [
+    { id: 'all', name: 'All' },
+    { id: 'necklaces', name: 'Necklaces' },
+    { id: 'rings', name: 'Rings' },
+    { id: 'earrings', name: 'Earrings' },
+    { id: 'bracelets', name: 'Bracelets' }
   ];
 
   return (
@@ -63,19 +28,20 @@ const FeaturedProducts = () => {
             </p>
           </div>
           
-          <div className="flex gap-3">
-            <button className="text-sm font-medium text-primary hover:text-primary/80 transition-colors border-b border-primary">
-              All
-            </button>
-            <button className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-              Necklaces
-            </button>
-            <button className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-              Rings
-            </button>
-            <button className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-              Earrings
-            </button>
+          <div className="flex gap-3 flex-wrap">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setActiveCategory(category.id)}
+                className={`text-sm font-medium transition-colors ${
+                  activeCategory === category.id
+                    ? 'text-primary border-b border-primary'
+                    : 'text-muted-foreground hover:text-primary'
+                }`}
+              >
+                {category.name}
+              </button>
+            ))}
           </div>
         </div>
         
