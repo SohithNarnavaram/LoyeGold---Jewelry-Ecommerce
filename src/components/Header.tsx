@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { useCart } from '@/contexts/CartContext';
 import { useFavorites } from '@/contexts/FavoritesContext';
 import { useNavigate } from 'react-router-dom';
+import CartSidebar from './CartSidebar';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -152,6 +153,9 @@ const Header = () => {
           </div>
         )}
       </div>
+      
+      {/* Cart Sidebar */}
+      <CartSidebar />
     </header>
   );
 };
