@@ -28,18 +28,30 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-sm font-medium transition-colors hover:text-primary">
-              White Jewelry
-            </a>
-            <a href="#" className="text-sm font-medium transition-colors hover:text-primary">
-              Gold Jewelry
-            </a>
-            <a href="#" className="text-sm font-medium transition-colors hover:text-primary">
-              Platinum Jewelry
-            </a>
-            <a href="#" className="text-sm font-medium transition-colors hover:text-primary">
-              Custom
-            </a>
+            <button 
+              onClick={() => navigate('/')}
+              className="text-sm font-medium transition-colors hover:text-primary"
+            >
+              Home
+            </button>
+            <button 
+              onClick={() => navigate('/')}
+              className="text-sm font-medium transition-colors hover:text-primary"
+            >
+              Products
+            </button>
+            <button 
+              onClick={() => navigate('/profile')}
+              className="text-sm font-medium transition-colors hover:text-primary"
+            >
+              Profile
+            </button>
+            <button 
+              onClick={() => navigate('/contact')}
+              className="text-sm font-medium transition-colors hover:text-primary"
+            >
+              Contact
+            </button>
           </nav>
 
           {/* Desktop Actions */}
@@ -99,18 +111,42 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden border-t bg-background/95 backdrop-blur">
             <div className="px-2 py-4 space-y-2">
-              <a href="#" className="block px-3 py-2 text-sm font-medium hover:bg-secondary rounded-md">
-                White Jewelry
-              </a>
-              <a href="#" className="block px-3 py-2 text-sm font-medium hover:bg-secondary rounded-md">
-                Gold Jewelry
-              </a>
-              <a href="#" className="block px-3 py-2 text-sm font-medium hover:bg-secondary rounded-md">
-                Platinum Jewelry
-              </a>
-              <a href="#" className="block px-3 py-2 text-sm font-medium hover:bg-secondary rounded-md">
-                Custom
-              </a>
+              <button 
+                onClick={() => {
+                  navigate('/');
+                  setIsMenuOpen(false);
+                }}
+                className="block w-full text-left px-3 py-2 text-sm font-medium hover:bg-secondary rounded-md"
+              >
+                Home
+              </button>
+              <button 
+                onClick={() => {
+                  navigate('/');
+                  setIsMenuOpen(false);
+                }}
+                className="block w-full text-left px-3 py-2 text-sm font-medium hover:bg-secondary rounded-md"
+              >
+                Products
+              </button>
+              <button 
+                onClick={() => {
+                  navigate('/profile');
+                  setIsMenuOpen(false);
+                }}
+                className="block w-full text-left px-3 py-2 text-sm font-medium hover:bg-secondary rounded-md"
+              >
+                Profile
+              </button>
+              <button 
+                onClick={() => {
+                  navigate('/contact');
+                  setIsMenuOpen(false);
+                }}
+                className="block w-full text-left px-3 py-2 text-sm font-medium hover:bg-secondary rounded-md"
+              >
+                Contact
+              </button>
               <div className="flex items-center space-x-4 px-3 py-2">
                 <Button variant="ghost" size="icon">
                   <Search className="h-4 w-4" />

@@ -1,13 +1,18 @@
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <footer className="bg-card border-t">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-serif font-bold gradient-rose bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <h3 
+              className="text-2xl font-serif font-bold gradient-rose bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent cursor-pointer"
+              onClick={() => navigate('/')}
+            >
               Loyegold
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
@@ -31,11 +36,38 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Collections</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Custom Design</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Size Guide</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Care Instructions</a></li>
+              <li>
+                <button 
+                  onClick={() => navigate('/')}
+                  className="text-muted-foreground hover:text-primary transition-colors text-left"
+                >
+                  Home
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => navigate('/')}
+                  className="text-muted-foreground hover:text-primary transition-colors text-left"
+                >
+                  Products
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => navigate('/profile')}
+                  className="text-muted-foreground hover:text-primary transition-colors text-left"
+                >
+                  Profile
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => navigate('/contact')}
+                  className="text-muted-foreground hover:text-primary transition-colors text-left"
+                >
+                  Contact Us
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -43,7 +75,14 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Customer Service</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Contact Us</a></li>
+              <li>
+                <button 
+                  onClick={() => navigate('/contact')}
+                  className="text-muted-foreground hover:text-primary transition-colors text-left"
+                >
+                  Contact Us
+                </button>
+              </li>
               <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Shipping Info</a></li>
               <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Returns & Exchanges</a></li>
               <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Warranty</a></li>
